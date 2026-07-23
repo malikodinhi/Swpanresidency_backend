@@ -258,6 +258,8 @@ class CheckOutViewSet(viewsets.ModelViewSet):
 
         rent = checkin.room.room_type.rent
         total_amount = rent * total_days
+        #This is gst rate
+        
         tax_rate = Decimal('0.36')
         tax_amount = total_amount * tax_rate
         grand_total = total_amount + tax_amount

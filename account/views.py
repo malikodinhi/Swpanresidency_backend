@@ -9,8 +9,9 @@ from .serializers import InstitutionSerializer, CustomTokenObtainPairSerializer
 class LoginAPIView(TokenObtainPairView):
     """
     POST /api/auth/login/
-    Accepts 'code' and 'password' credentials to issue JWT keys.
+    Accepts 'username' and 'password' credentials to issue JWT keys.
     """
+
     serializer_class = CustomTokenObtainPairSerializer
 
 
