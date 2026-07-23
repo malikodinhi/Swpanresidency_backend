@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\sarath\OneDrive\Desktop\prosevo\django\env'
+set -gx VIRTUAL_ENV 'F:\HotelMngmnt120726\HotelMngmnt\hotelmanagement_backend\env'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"Scripts $PATH
