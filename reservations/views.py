@@ -260,7 +260,7 @@ class CheckOutViewSet(viewsets.ModelViewSet):
         total_amount = rent * total_days
         #This is gst rate
         
-        tax_rate = Decimal('0.5')
+        tax_rate = Decimal('0.05')
         tax_amount = total_amount * tax_rate
         grand_total = total_amount + tax_amount
         balance = grand_total - checkin.advance_amount
@@ -311,7 +311,7 @@ class CheckOutViewSet(viewsets.ModelViewSet):
         base_rent = float(getattr(checkin, 'base_daily_rent', None) or rent)
 
         subtotal = float(base_rent * checkout.total_days)
-        gst = subtotal * 0.5
+        gst = subtotal * 0.05
         grand_total = subtotal + gst
 
         receipt_data = {
@@ -489,7 +489,7 @@ class CheckOutViewSet(viewsets.ModelViewSet):
         # Financial Breakdown Table
         story.append(Paragraph("Financial Breakdown", section_style))
         subtotal = base_rent * checkout.total_days
-        gst = subtotal * 0.5
+        gst = subtotal * 0.05
         grand_total = subtotal + gst
         balance_val = float(checkout.balance_paid)
         balance_str = f"-Rs. {abs(balance_val):.2f}" if balance_val < 0 else f"Rs. {balance_val:.2f}"
