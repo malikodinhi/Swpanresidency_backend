@@ -494,6 +494,7 @@ class CheckOutViewSet(viewsets.ModelViewSet):
         balance_val = float(checkout.balance_paid)
         balance_str = f"-Rs. {abs(balance_val):.2f}" if balance_val < 0 else f"Rs. {balance_val:.2f}"
 
+#Checkout Receipt details
         financial_data = [
     [
         Paragraph("Description", table_header_style),
@@ -506,7 +507,7 @@ class CheckOutViewSet(viewsets.ModelViewSet):
         Paragraph(f"Rs. {subtotal:.2f}", table_cell_right)
     ],
     [
-        Paragraph("SGST & CGST ", table_cell_style),
+        Paragraph("CGST&SGST ", table_cell_style),
         Paragraph("", table_cell_style),
         Paragraph(f"Rs. {gst:.2f}", table_cell_right)
     ],
